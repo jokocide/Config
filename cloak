@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+import os
+import sys
+args = sys.argv[1:]
+
+gitignore = open('.gitignore', 'a')
+for arg in args:
+    gitignore.write(arg + '\n')
+
+gitignore.close()
+print('Files cloaked.')
