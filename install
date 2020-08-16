@@ -1,34 +1,35 @@
 #!/usr/bin/env python3
-import os, sys, logging
-
-# Initialize logging.
-log = logging.getLogger("microscripts_install")
-log.setLevel(logging.INFO)
+import os
+import sys
 
 # Variables
 microscripts = sys.path[0]
-path = os.environ["PATH"]
 shell = os.environ["SHELL"]
-path = ""
-
-# Is Microscripts already in $PATH?
-if (microscripts in path):
-    print('Microscripts is already installed!')
-    exit(1)
+home = os.environ["HOME"]
 
 # ZSH or BASH?
 if ("zsh" in shell):
-	path = f"{os.environ['HOME']}/.zshrc"
+    path_to_shell = f"{home}/.zshrc"
 elif ("bash" in shell):
-	path = f"{os.environ['HOME']}/.bashrc"
+    path_to_shell = f"{home}/.bashrc"
 else:
-	print("Automatic installation only works for BASH/ZSH!")
+    sys.exit(
+        f" Automatic installation only works for BASH/ZSH, {shell} is not supported.")
 
-# Try to write the file.
-try:
-	with open(path, "a+") as file:
-		file.write(f"\nPATH=$PATH:{sys.path[0]}")
-		print("Microscripts has been installed!")
-except:
-	logging.critical(" Error: Couldn't write the file, please add microscripts to your path manually.")
+# Try to append microscripts to PATH.
+with open(path_to_shell, "r") as zshrc:
+    original_lines = zshrc.readlines()
 
+with open(path_to_shell, "a+") as zshrc:
+    if (original_lines):
+        for line in original_lines:
+            stripped_line = line.rstrip()
+            if ("PATH" in stripped_line):
+                if ("microscripts" in stripped_line):
+                    sys.exit("Looks like microscripts is already in your PATH.")
+                stripped_line += f":{microscripts}"
+                zshrc.write(stripped_line)
+    else:
+        zshrc.write(f"PATH=$PATH:{microscripts}")
+        print(
+            f"Looks like you didn't have a PATH set, created one and added it to {path_to_shell} for you.")
