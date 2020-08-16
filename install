@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import os, sys, logging
+
+# Initialize logging.
+log = logging.getLogger("microscripts_install")
+log.setLevel(logging.INFO)
+
+# Variables
+microscripts = sys.path[0]
+path = os.environ["PATH"]
+shell = os.environ["SHELL"]
+path = ""
+
+# Is Microscripts already in $PATH?
+if (microscripts in path):
+    print('Microscripts is already installed!')
+    exit(1)
+
+# ZSH or BASH?
+if ("zsh" in shell):
+	path = f"{os.environ['HOME']}/.zshrc"
+elif ("bash" in shell):
+	path = f"{os.environ['HOME']}/.bashrc"
+else:
+	print("Automatic installation only works for BASH/ZSH!")
+
+# Try to write the file.
+try:
+	with open(path, "a+") as file:
+		file.write(f"\nPATH=$PATH:{sys.path[0]}")
+		print("Microscripts has been installed!")
+except:
+	logging.critical(" Error: Couldn't write the file, please add microscripts to your path manually.")
+
