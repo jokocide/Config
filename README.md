@@ -1,18 +1,20 @@
-#### Installation:
+#### INSTALLATION
 
-Clone the repository and add it to your $PATH. An installation script is included for typical shells like BASH and ZSH.
+Clone the repository and add it to your $PATH.
 
 ```sh
 git clone https://github.com/jonmkoenig/microscripts ~/bin/microscripts
 
-cd $_
-
-./install
+./microscripts/install
 ```
 
-#### Example from the 'cloak' script:
+#### EXAMPLE
 
 ```sh
+cat .gitignore
+
+secrets.txt
+
 cloak .gitignore '**/__pycache__' config.json
 
 Opened .gitignore and appended:
@@ -21,6 +23,7 @@ Opened .gitignore and appended:
 
 cat .gitignore
 
+secrets.txt
 **/__pycache__
 config.json
 ```
