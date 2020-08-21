@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 import sys
+
 args = sys.argv
 file_name = args[1]
 files = args[2:]
@@ -11,4 +11,3 @@ for file in files:
     target.write(file+ '\n')
     print(f"\t- {file}")
 target.close()
-

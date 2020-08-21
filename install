@@ -14,7 +14,7 @@ elif ("bash" in shell):
     path_to_shell = f"{home}/.bashrc"
 else:
     sys.exit(
-        f" Automatic installation only works for BASH/ZSH, {shell} is not supported.")
+        f"{shell} not supported for automatic installation")
 
 # Try to append microscripts to PATH.
 with open(path_to_shell, "r") as zshrc:
@@ -26,10 +26,9 @@ with open(path_to_shell, "a+") as zshrc:
             stripped_line = line.rstrip()
             if ("PATH" in stripped_line):
                 if ("microscripts" in stripped_line):
-                    sys.exit("Looks like microscripts is already in your PATH.")
+                    sys.exit("Microscripts is already in $PATH")
                 stripped_line += f":{microscripts}"
                 zshrc.write(stripped_line)
     else:
         zshrc.write(f"PATH=$PATH:{microscripts}")
-        print(
-            f"Looks like you didn't have a PATH set, created one and added it to {path_to_shell} for you.")
+        print("Successfully appended microscripts to $PATH")
