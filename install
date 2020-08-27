@@ -20,7 +20,7 @@ else:
 with open(path_to_shell, "r") as zshrc:
     original_lines = zshrc.readlines()
 
-with open(path_to_shell, "a+") as zshrc:
+with open(path_to_shell, "w+") as zshrc:
     if (original_lines):
         for line in original_lines:
             stripped_line = line.rstrip()
