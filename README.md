@@ -1,5 +1,3 @@
-<h3>{{ description }}</h3>
-
 #### INSTALLATION
 
 Clone the [repository.](https://github.com/jonmkoenig/microscripts)
