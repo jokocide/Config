@@ -15,7 +15,7 @@ cd microscripts
 
 If you aren't using BASH or ZSH you can add the directory to your path manually.
 
-Next, source either your .bashrc or .zshrc depending on your shell.
+Next, source either your .bashrc or .zshrc.
 
 ```sh
 source ~/.zshrc
