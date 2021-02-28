@@ -3,7 +3,7 @@
 Clone the [repository](https://github.com/jonmkoenig/microscripts) and add it to your path. On Windows I usually clone directly to 'C:\Program Files' -- on Unix systems I would clone to my home directory.
 
 ```sh
-git clone https://github.com/jonmkoenig/microscripts
+git clone https://github.com/jokocide/Microscripts.git
 ```
 
 Update your path to include the new Microscripts directory.
