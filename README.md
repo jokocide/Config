@@ -1,4 +1,4 @@
-![Terminal](./terminal.png)
+![Terminal](terminal.png)
 
 #### INSTALLATION
 
