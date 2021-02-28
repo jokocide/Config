@@ -6,7 +6,7 @@ Clone the [repository](https://github.com/jonmkoenig/microscripts) and add it to
 git clone https://github.com/jokocide/Microscripts.git
 ```
 
-Update your path to include the new Microscripts directory.
+Update your path to include the directory that contains the version of the scripts you will be using. (ex C:\Program Files\Microscripts\pwsh\)
 
 I focus on developing the scripts in Powershell and BASH primarily, but I sometimes create a python alternative as well. Delete the directories that are not relevant to you.
 
