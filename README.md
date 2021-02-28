@@ -1,3 +1,5 @@
+![Terminal](./terminal.png)
+
 #### INSTALLATION
 
 Clone the [repository.](https://github.com/jonmkoenig/microscripts)
