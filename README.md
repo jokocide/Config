@@ -1,3 +1,5 @@
+My Powershell/BASH configuration. These are essentially just miniature scripts that make common tasks (almost) 3 seconds faster for me.
+
 ## INSTALLATION
 
 Clone the [repository.](https://github.com/jokocide/microscripts.git) Review the files and remove the directories that are not relevant to you. (ie 'pwsh' on unix systems)
