@@ -3,9 +3,7 @@
 Set-Alias -Name gh -Value Get-Help
 
 # Powershell is verbose. Make a ton of aliases if you value sanity.
-Set-Alias -Name editor -Value $Editor
 Set-Alias -Name ga -Value Get-Access
-Set-Alias -Name ep -Value Edit-Profile
 Set-Alias -Name su -Value Substitute-User
 Set-Alias -Name opd -Value Open-ProfileDirectory
 Set-Alias -Name gf -Value Get-Function
@@ -32,12 +30,6 @@ function Get-Access {
     } else {
         (Get-Acl $Path).Access
     }
-}
-
-function Edit-Profile {
-    # Open current Powershell profile in VSC Insiders.
-    # Provide an $Editor variable if you are using this script on its own.
-    $Editor $Profile
 }
 
 function Open-ProfileDirectory {
