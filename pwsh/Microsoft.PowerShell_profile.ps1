@@ -1,9 +1,4 @@
 <#
-Globals
-#>
-$Editor = "code"
-
-<#
 General alias
 #>
 Set-Alias -Name gh -Value Get-Help
