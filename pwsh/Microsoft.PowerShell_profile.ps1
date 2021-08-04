@@ -1,57 +1,44 @@
-# Most of these aliases reference functions that have longer, more verbose names below. this is so they resemble native cmdlets, even though 
-# they are not all have 'legal' verbs according to Microsoft.
-Set-Alias -Name gh -Value Get-Help
+<#
+Globals
+#>
+$Editor = "code"
 
-# Powershell is verbose. Make a ton of aliases if you value sanity.
+<#
+General alias
+#>
+Set-Alias -Name gh -Value Get-Help
+Set-Alias -Name so -Value Select-Object
+
+<#
+Function alias
+#>
+Set-Alias -Name su -Value Switch-User
 Set-Alias -Name ga -Value Get-Access
-Set-Alias -Name su -Value Substitute-User
-Set-Alias -Name opd -Value Open-ProfileDirectory
 Set-Alias -Name gf -Value Get-Function
 
-# Mimic the 'EDITOR' environment variable on unix systems. Change this to call whatever editor you prefer.
-$Editor = "code-insiders"
-
-function Substitute-User {
-    # Mimic 'su' functionality on linux by opening a new Powershell window at the current directory with Administrator privileges.
-    $Set = (pwd)
-    $Location = $Set.Path
-
-    Invoke-Command {Start-Process -FilePath "powershell" -Wait -Verb RunAs -ArgumentList "-NoExit","-Command Set-Location '$Location'"}
+# Open a new Administrator Powershell window in the current working directory.
+function Switch-User 
+{
+    $CurrentDirectory = (Get-Location)
+    Invoke-Command {Start-Process -FilePath "powershell" -Wait -Verb RunAs -ArgumentList "-NoExit", "-Command Set-Location '$CurrentDirectory'"}
 }
 
-function Get-Access {
-    # Display ACLs on a file. If called without a path, it will get the ACLs for the current directory.
-    param(
+# Display ACLs on a given path, or the current directory if no path is given.
+function Get-Access 
+{
+    param
+    (
         $Path
     )
-    
-    if (!$Path) {
-        (Get-Acl (pwd)).Access
-    } else {
-        (Get-Acl $Path).Access
-    }
+
+    If (!$Path) { (Get-Acl (Get-Location)).Access } Else { (Get-Acl $Path).Access }
 }
 
-function Open-ProfileDirectory {
-    # Move to Powershell directory. Use -gui argument to open in explorer.
-    $Path = "$home\Documents\WindowsPowershell"
- 
-    if ($Args) {
-        foreach ($Arg in $Args) {
-            if ($Arg -eq "-GUI") {
-                explorer $Path 
-            } elseif ($Arg -ne "-GUI") {
-                Write-Host "-GUI is the only supported argument right now."
-            }
-        }
-    }
-    Set-Location $Path
-   
-}
-
-function Get-Function {
-    # Display function definition.
-    param(
+# Display the definition of a given function.
+function Get-Function 
+{
+    param
+    (
         $Target
     )
 
