@@ -1,0 +1,6 @@
+export PATH=~/.dotnet/tools/:$PATH
+export EDITOR=vim
+
+case "$(uname -s)" in
+    Darwin*)    alias lsblk="diskutil list";;
+esac
