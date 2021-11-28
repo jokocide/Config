@@ -7,3 +7,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
 And then run install.ps1.
+
+```pwsh
+./install.ps1
+```
