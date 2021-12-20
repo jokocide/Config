@@ -12,7 +12,7 @@ VIM_CONTROL=0
 # Zsh
 #
 if test -f "${HOME}/.zshrc"; then
-  echo "~/.zshrc already exists."
+  echo "${HOME}/.zshrc already exists, skipped."
 else
   ln -s "${SCRIPT_DIR}/zsh/zshrc" "${HOME}/.zshrc"
 fi
@@ -20,8 +20,9 @@ fi
 #
 # SSH
 #
+mkdir ${HOME}/.ssh &> /dev/null
 if test -f "${HOME}/.ssh/config"; then
-  echo "~/.ssh/config already exists."
+  echo "${HOME}/.ssh/config already exists, skipped."
 else
   ln -s "${SCRIPT_DIR}/ssh/config" "${HOME}/.ssh/config"
 fi
@@ -30,7 +31,7 @@ fi
 # Vim 
 #
 if test -f "${HOME}/.vimrc"; then
-  echo "~/.vimrc already exists."
+  echo "${HOME}.vimrc already exists, skipped."
 else
   ln -s "${SCRIPT_DIR}/vim/vimrc" "${HOME}/.vimrc"
 fi
