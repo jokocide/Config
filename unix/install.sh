@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Show app switcher on all displays by default.
+if [[ $OSTYPE == 'darwin'* ]]; then
+  defaults write com.apple.Dock appswitcher-all-displays -bool true
+  killall Dock
+  echo "Installed macOS tweaks."
+fi
+
 SCRIPT_PATH=${BASH_SOURCE[0]}
 SCRIPT_NAME=${PROG_PATH##*/}
 SCRIPT_DIR="$(cd "$(dirname "${SCRIPT_PATH:-$PWD}")" 2>/dev/null 1>&2 && pwd)"

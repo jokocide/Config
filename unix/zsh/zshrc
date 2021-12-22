@@ -1,4 +1,5 @@
 export PATH=~/.dotnet/tools/:$PATH
+export BROWSER=none
 export EDITOR=vim
 
 alias nuget="mono /usr/local/bin/nuget.exe"
