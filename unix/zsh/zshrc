@@ -5,6 +5,7 @@ export EDITOR=vim
 alias nuget="mono /usr/local/bin/nuget.exe"
 alias ls="ls -l"
 alias lsa="ls -la"
+alias weather="osascript -e 'display notification \"Salt Lake City (KMTX)\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
 
 case "$(uname -s)" in
     Darwin*)    alias lsblk="diskutil list";;
