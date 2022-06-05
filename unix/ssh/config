@@ -1,3 +1,9 @@
-Host juice-box
-	HostName 10.0.0.29
+Host pi 
+	User admin
+	HostName 10.0.0.44
+	Port 22
+
+Host server
+	User admin
+	HostName 10.0.0.45
 	Port 22
