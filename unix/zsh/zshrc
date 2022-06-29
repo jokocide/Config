@@ -8,6 +8,10 @@ alias remote="git remote show"
 alias ls="ls -l"
 alias lsa="ls -la"
 alias weather="osascript -e 'display notification \"Salt Lake City (KMTX)\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
+alias ga="git add"
+alias gs="git status"
+alias gm="git commit -m"
+alias gp="git push" 
 
 case "$(uname -s)" in
     Darwin*)    alias lsblk="diskutil list";;
