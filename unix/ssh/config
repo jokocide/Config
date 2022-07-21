@@ -2,8 +2,10 @@ Host pi
 	User admin
 	HostName 10.0.0.44
 	Port 22
+	IdentityFile ~/.ssh/pi
 
-Host server
+Host air
 	User admin
 	HostName 10.0.0.45
 	Port 22
+	IdentityFile ~/.ssh/air
