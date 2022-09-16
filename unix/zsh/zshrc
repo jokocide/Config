@@ -1,4 +1,4 @@
-export PATH=~/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:$PATH
+export PATH=~/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:$PATH
 
 # Variables
 export EDITOR=vim
