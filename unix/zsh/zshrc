@@ -1,4 +1,4 @@
-export PATH=~/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:$PATH
+export PATH=~/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:~/go/bin:$PATH
 
 # Variables
 export EDITOR=vim
@@ -27,6 +27,7 @@ alias gr="go run *.go"
 alias d='docker'
 alias dc='docker container'
 alias di='docker image'
+alias dp='docker rmi -f $(docker images -a -q)'
 alias prune='docker system prune'
 
 # Misc
@@ -36,3 +37,8 @@ alias weather="osascript -e 'display notification \"Salt Lake City (KMTX)\" with
 case "$(uname -s)" in
     Darwin*)    alias lsblk="diskutil list";;
 esac
+
+# pnpm
+export PNPM_HOME="/Users/jon/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm endexport PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
