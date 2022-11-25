@@ -1,10 +1,7 @@
-export PATH=~/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:~/go/bin:$PATH
+export PATH=~~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:$PATH
 
 # Variables
 export EDITOR=vim
-
-# VIM
-alias vim="nvim"
 
 #.NET
 alias nuget="mono /usr/local/bin/nuget.exe"
@@ -21,6 +18,7 @@ alias gp="git push"
 alias nr="npm run"
 
 # Go
+export GOPATH=~/.go
 alias gr="go run *.go"
 
 # Docker
@@ -32,13 +30,13 @@ alias prune='docker system prune'
 
 # Misc
 alias ll='ls -l'
-alias weather="osascript -e 'display notification \"Salt Lake City (KMTX)\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
+alias weather="osascript -e 'display notification \"National Weather Service\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
 
 case "$(uname -s)" in
     Darwin*)    alias lsblk="diskutil list";;
 esac
 
-# pnpm
-export PNPM_HOME="/Users/jon/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm endexport PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
