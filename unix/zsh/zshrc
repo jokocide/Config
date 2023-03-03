@@ -1,5 +1,22 @@
 export PATH=~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:$PATH
 
+function macdisk() {
+	if ! command -v smartctl &> /dev/null
+	then
+		echo "smartctl is not in path, maybe try <brew install smartmontools>"
+		return
+	fi
+	smartctl --all /dev/disk0
+}
+
+# OS-specific aliases
+case "$(uname -s)" in
+    Darwin*)    
+	alias lsblk="diskutil list"
+	alias disk="macdisk"
+	;;
+esac
+
 # Variables
 export EDITOR=vim
 
@@ -12,7 +29,7 @@ alias grs="git remote show"
 alias ga="git add"
 alias gs="git status"
 alias gm="git commit -m"
-alias gp="git push" 
+alias gp="git push"
 
 # Node/NPM
 alias nr="npm run"
@@ -28,15 +45,6 @@ alias di='docker image'
 alias dp='docker rmi -f $(docker images -a -q)'
 alias prune='docker system prune'
 
-# Misc
 alias ll='ls -l'
 alias weather="osascript -e 'display notification \"National Weather Service\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
-
-case "$(uname -s)" in
-    Darwin*)    alias lsblk="diskutil list";;
-esac
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
