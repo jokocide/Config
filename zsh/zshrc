@@ -1,4 +1,4 @@
-export PATH=~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:$PATH
+export PATH=~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:~/.go/bin:$PATH
 
 function macdisk() {
 	if ! command -v smartctl &> /dev/null
@@ -11,14 +11,17 @@ function macdisk() {
 
 # OS-specific aliases
 case "$(uname -s)" in
-    Darwin*)    
+    Darwin*)
 	alias lsblk="diskutil list"
 	alias disk="macdisk"
 	;;
 esac
 
+alias ll='ls -l'
+alias weather="osascript -e 'display notification \"National Weather Service\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
+
 # Variables
-export EDITOR=vim
+export EDITOR=nvim
 
 #.NET
 alias nuget="mono /usr/local/bin/nuget.exe"
@@ -34,17 +37,18 @@ alias gp="git push"
 # Node/NPM
 alias nr="npm run"
 
+# React
+alias rd="react-devtools"
+
 # Go
 export GOPATH=~/.go
 alias gr="go run *.go"
 
 # Docker
-alias d='docker'
 alias dc='docker container'
 alias di='docker image'
 alias dp='docker rmi -f $(docker images -a -q)'
-alias prune='docker system prune'
+alias dprune='docker system prune'
 
-alias ll='ls -l'
-alias weather="osascript -e 'display notification \"National Weather Service\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
-
+# Python
+alias serve='python3 -m http.server'
