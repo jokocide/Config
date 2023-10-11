@@ -27,6 +27,7 @@ export EDITOR=nvim
 alias nuget="mono /usr/local/bin/nuget.exe"
 
 # Git
+alias g="git"
 alias gb="git branch --show-current"
 alias grs="git remote show"
 alias ga="git add"
