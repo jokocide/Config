@@ -1,0 +1,5 @@
+require('core.plugconf.gruvbox')
+require('core.plugconf.lualine')
+require('core.plugconf.nvim-tree')
+require('core.plugconf.treesitter')
+require('core.plugconf.telescope')
