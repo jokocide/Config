@@ -21,6 +21,8 @@ local ensure_packer = function()
     use 'aditya-azad/candle-grey'
     use 'zekzekus/menguless'
     use 'NTBBloodbath/doom-one.vim'
+    use 'vimoxide/vim-cinnabar'
+    use 'aktersnurra/no-clown-fiesta.nvim'
     
     -- LSP / Autocomp
     use {

@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/menguless",
     url = "https://github.com/zekzekus/menguless"
   },
+  ["no-clown-fiesta.nvim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/no-clown-fiesta.nvim",
+    url = "https://github.com/aktersnurra/no-clown-fiesta.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -173,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-cinnabar"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-cinnabar",
+    url = "https://github.com/vimoxide/vim-cinnabar"
   },
   ["vim-monochrome"] = {
     loaded = true,
