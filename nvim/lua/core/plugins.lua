@@ -13,7 +13,27 @@ local ensure_packer = function()
   
   return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+
+    -- Colors
+    use 'ntk148v/komau.vim'
+    use 'fxn/vim-monochrome'
     use 'ellisonleao/gruvbox.nvim'
+    use 'aditya-azad/candle-grey'
+    use 'zekzekus/menguless'
+    use 'NTBBloodbath/doom-one.vim'
+    
+    -- LSP / Autocomp
+    use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+    }
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'rafamadriz/friendly-snippets'
+
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'

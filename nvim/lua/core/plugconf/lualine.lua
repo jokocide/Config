@@ -1,7 +1,7 @@
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = 'doom-one',
     },
     sections = {
         lualine_a = {

@@ -74,15 +74,75 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["candle-grey"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/candle-grey",
+    url = "https://github.com/aditya-azad/candle-grey"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["doom-one.vim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/doom-one.vim",
+    url = "https://github.com/NTBBloodbath/doom-one.vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["komau.vim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/komau.vim",
+    url = "https://github.com/ntk148v/komau.vim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
+  menguless = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/menguless",
+    url = "https://github.com/zekzekus/menguless"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -113,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-monochrome"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-monochrome",
+    url = "https://github.com/fxn/vim-monochrome"
   }
 }
 
