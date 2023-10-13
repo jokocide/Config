@@ -23,6 +23,9 @@ alias weather="osascript -e 'display notification \"National Weather Service\" w
 # Variables
 export EDITOR=nvim
 
+# Neovim
+alias n="nvim"
+
 #.NET
 alias nuget="mono /usr/local/bin/nuget.exe"
 
