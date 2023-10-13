@@ -14,15 +14,13 @@ local on_attach = function (_, _)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  
 local lspconfig = require('lspconfig')
-local lsp_defaults = lspconfig.util.default_config
 
-require("lspconfig").tsserver.setup({})
-require("lspconfig").rust_analyzer.setup({})
-require("lspconfig").gopls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.tsserver.setup({})
+lspconfig.rust_analyzer.setup {}
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }

@@ -1,7 +1,7 @@
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = 'doom-one',
+        theme = 'yami',
     },
     sections = {
         lualine_a = {

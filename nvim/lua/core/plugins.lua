@@ -15,15 +15,17 @@ local ensure_packer = function()
     use 'wbthomason/packer.nvim'
 
     -- Colors
-    use 'ntk148v/komau.vim'
-    use 'fxn/vim-monochrome'
-    use 'ellisonleao/gruvbox.nvim'
     use 'aditya-azad/candle-grey'
     use 'zekzekus/menguless'
-    use 'NTBBloodbath/doom-one.vim'
     use 'vimoxide/vim-cinnabar'
     use 'aktersnurra/no-clown-fiesta.nvim'
-    
+    use 'He4eT/desolate.nvim'
+    use 'wuelnerdotexe/vim-enfocado'
+    use 'orfosys/nvim-nyctophilia'
+    use 'danishprakash/vim-yami'
+    use 'p00f/alabaster.nvim'
+    use 'nyoom-engineering/oxocarbon.nvim'
+
     -- LSP / Autocomp
     use {
       "williamboman/mason.nvim",
