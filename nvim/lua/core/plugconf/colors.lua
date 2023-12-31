@@ -1,2 +1,2 @@
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme yami ]]
+vim.cmd [[ colorscheme umbra ]]

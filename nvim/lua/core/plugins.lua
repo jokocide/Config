@@ -15,16 +15,8 @@ local ensure_packer = function()
     use 'wbthomason/packer.nvim'
 
     -- Colors
-    use 'aditya-azad/candle-grey'
-    use 'zekzekus/menguless'
-    use 'vimoxide/vim-cinnabar'
-    use 'aktersnurra/no-clown-fiesta.nvim'
-    use 'He4eT/desolate.nvim'
-    use 'wuelnerdotexe/vim-enfocado'
     use 'orfosys/nvim-nyctophilia'
-    use 'danishprakash/vim-yami'
-    use 'p00f/alabaster.nvim'
-    use 'nyoom-engineering/oxocarbon.nvim'
+    use 'yorickpeterse/nvim-grey'
 
     -- LSP / Autocomp
     use {
@@ -37,6 +29,7 @@ local ensure_packer = function()
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
+    use 'rstacruz/vim-closer'
 
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
