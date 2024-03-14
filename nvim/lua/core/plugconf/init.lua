@@ -1,4 +1,3 @@
-vim.wo.number = true
 require('core.plugconf.colors')
 require('core.plugconf.completions')
 require('core.plugconf.lsp')

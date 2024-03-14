@@ -1,4 +1,6 @@
 export PATH=~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:~/.go/bin:$PATH
+export EDITOR=nvim
+alias serve='python3 -m http.server'
 
 function macdisk() {
 	if ! command -v smartctl &> /dev/null
@@ -14,14 +16,29 @@ case "$(uname -s)" in
     Darwin*)
 	alias lsblk="diskutil list"
 	alias disk="macdisk"
+  alias ip='ifconfig | grep 192.168.86.'
 	;;
 esac
 
 alias ll='ls -l'
-alias weather="osascript -e 'display notification \"National Weather Service\" with title \"Fetching Radar\"'; mpv --loop-file=inf \"https://radar.weather.gov/ridge/lite/KMTX_loop.gif\""
+alias ports='lsof -iTCP -sTCP:LISTEN -n -P'
 
-# Variables
-export EDITOR=nvim
+# Search web via Google
+google() {
+    if [[ -z "$1" ]]; then
+        echo "usage: search <query>"
+        return 1
+    fi
+    query=$(echo "$1" | sed 's/ /+/g')
+    if [[ $(uname) == "Darwin" ]]; then
+        open "https://www.google.com/search?q=$query"  # macOS
+    elif [[ $(uname) == "Linux" ]]; then
+        xdg-open "https://www.google.com/search?q=$query"  # Linux
+    else
+        echo "unsupported operating system"
+        return 1
+    fi
+}
 
 # Neovim
 alias n="nvim"
@@ -31,7 +48,8 @@ alias nuget="mono /usr/local/bin/nuget.exe"
 
 # Git
 alias g="git"
-alias gb="git branch --show-current"
+alias gb="git branch"
+alias gc="git checkout"
 alias grs="git remote show"
 alias ga="git add"
 alias gs="git status"
@@ -52,7 +70,4 @@ alias gr="go run *.go"
 alias dc='docker container'
 alias di='docker image'
 alias dp='docker rmi -f $(docker images -a -q)'
-alias dprune='docker system prune'
-
-# Python
-alias serve='python3 -m http.server'
+alias dpr='docker system prune'

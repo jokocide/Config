@@ -13,12 +13,12 @@ local ensure_packer = function()
   
   return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-
-    -- Colors
-    use 'orfosys/nvim-nyctophilia'
     use 'yorickpeterse/nvim-grey'
-
-    -- LSP / Autocomp
+    use 'savq/melange-nvim'
+    use {
+      "mcchrish/zenbones.nvim",
+     requires = "rktjmp/lush.nvim"
+    }
     use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -30,7 +30,6 @@ local ensure_packer = function()
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
     use 'rstacruz/vim-closer'
-
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
@@ -40,6 +39,7 @@ local ensure_packer = function()
       tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'}}
     }
+
     if packer_bootstrap then
       require('packer').sync()
     end

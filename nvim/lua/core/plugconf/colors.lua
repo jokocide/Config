@@ -1,2 +1,2 @@
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme umbra ]]
+vim.cmd [[ colorscheme zenbones ]]

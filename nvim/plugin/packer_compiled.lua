@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/jon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/jon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/jon/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/Users/jon/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/jon/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["candle-grey"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/candle-grey",
-    url = "https://github.com/aditya-azad/candle-grey"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -94,30 +89,20 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["doom-one.vim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/doom-one.vim",
-    url = "https://github.com/NTBBloodbath/doom-one.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["komau.vim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/komau.vim",
-    url = "https://github.com/ntk148v/komau.vim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -129,20 +114,20 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  menguless = {
+  ["melange-nvim"] = {
     loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/menguless",
-    url = "https://github.com/zekzekus/menguless"
-  },
-  ["no-clown-fiesta.nvim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/no-clown-fiesta.nvim",
-    url = "https://github.com/aktersnurra/no-clown-fiesta.nvim"
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/melange-nvim",
+    url = "https://github.com/savq/melange-nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-grey"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-grey",
+    url = "https://github.com/yorickpeterse/nvim-grey"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -179,15 +164,15 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-cinnabar"] = {
+  ["vim-closer"] = {
     loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-cinnabar",
-    url = "https://github.com/vimoxide/vim-cinnabar"
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-closer",
+    url = "https://github.com/rstacruz/vim-closer"
   },
-  ["vim-monochrome"] = {
+  ["zenbones.nvim"] = {
     loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-monochrome",
-    url = "https://github.com/fxn/vim-monochrome"
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 
