@@ -1,47 +1,65 @@
+local interact = require("core.interact")
+
 -- Leader
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 
 -- LSP
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {}) -- Rename symbol.
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})     -- Rename symbol.
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {}) -- Move cursor to definition of symbol.
 vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {})
 vim.keymap.set('n', '<leader>gr', require('telescope.builtin').lsp_references, {})
-vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover) -- Show modal window next to cursor with symbol information.
+vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover)                -- Show modal window next to cursor with symbol information.
 vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, {})
-vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, {}) -- Move to next LSP error.
+vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, {})     -- Move to next LSP error.
 vim.keymap.set('n', '<leader><S-n>', vim.diagnostic.goto_prev, {}) -- Move to previous LSP error.
+
 
 -- Buffers/Windows/Tabs
 vim.keymap.set('n', '<S-h>', ':bprev<CR>')
 vim.keymap.set('n', '<S-l>', ':bnext<CR>')
-vim.keymap.set('n', 'q',
-  function()
-    if vim.api.nvim_buf_get_option(0, 'modified') == true then
-      local save_choice = vim.fn.input("save buffer? (y|n): ")
-      if save_choice == 'y' or save_choice == 'Y' then
-        local name = vim.api.nvim_buf_get_name(0)
-        if name == '' then
-          local name_choice = vim.fn.input("enter name for new file: ")
-          if name_choice ~= "" then
-            vim.cmd( { cmd = 'w', args = { name_choice } } )
-          else
-            print("cancelled, invalid file name")
-          end
-        else
-          vim.cmd('w | bprev | bd #')
-        end
-      else
-        vim.cmd('bprev | bd! #')
-      end
+
+local function deleteBuffer(force)
+    local current_buf = vim.api.nvim_get_current_buf()
+    if vim.fn.bufnr('$') == 1 then
+        -- If only one buffer is open, just delete the current buffer.
+        vim.cmd('bd' .. (force and '!' or ''))
     else
-      vim.cmd('bprev | bd #')
+        vim.cmd('bprev')
+        vim.cmd('bd' .. (force and '!' or '') .. ' ' .. current_buf)
     end
-  end
-)
-vim.keymap.set('n', 't', ':enew<CR>') -- Open a new empty buffer.
-vim.keymap.set('n' , '<leader>l', ':ls<CR>') -- List buffers.
+end
+
+local function saveAndDeleteBuffer()
+    if vim.api.nvim_buf_get_name(0) == "" then
+        -- Buffer has no name, so prompt user for one.
+        interact.prompt(
+            "enter name for new file: ",
+            function(choice) vim.cmd({ cmd = 'w', args = { choice } }) end,
+            function() print("error: must provide a name") end
+        )
+    else
+        -- Buffer has a name already, so just save and delete.
+        vim.cmd('w')
+        deleteBuffer(true)
+    end
+end
+
+local function handleBuffer()
+    local savePrompt = "Save buffer? (y|Y): "
+    if vim.api.nvim_buf_get_option(0, 'modified') == true then
+        -- Prompt for confirmation before saving
+        interact.confirm(savePrompt, saveAndDeleteBuffer, function() deleteBuffer(true) end)
+    else
+        -- No need for confirmation, just delete buffer
+        deleteBuffer(true)
+    end
+end
+
+vim.keymap.set('n', 'q', handleBuffer)
+vim.keymap.set('n', 't', ':enew<CR>')        -- Open a new empty buffer.
+vim.keymap.set('n', '<leader>l', ':ls<CR>')  -- List buffers.
 
 -- Movement
 vim.keymap.set('n', '<S-j>', '10j<CR>', { silent = true })

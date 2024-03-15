@@ -114,20 +114,10 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["melange-nvim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/melange-nvim",
-    url = "https://github.com/savq/melange-nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-grey"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/nvim-grey",
-    url = "https://github.com/yorickpeterse/nvim-grey"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
