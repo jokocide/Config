@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["atlas.vim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/atlas.vim",
+    url = "https://github.com/huyvohcmc/atlas.vim"
+  },
+  badwolf = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/badwolf",
+    url = "https://github.com/sjl/badwolf"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -99,11 +109,6 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -113,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["noir.nvim"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/noir.nvim",
+    url = "https://github.com/dzfrias/noir.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -159,10 +169,15 @@ _G.packer_plugins = {
     path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/rstacruz/vim-closer"
   },
-  ["zenbones.nvim"] = {
+  ["vim-color-scheme-meteor"] = {
     loaded = true,
-    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
-    url = "https://github.com/mcchrish/zenbones.nvim"
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-color-scheme-meteor",
+    url = "https://github.com/chmnchiang/vim-color-scheme-meteor"
+  },
+  ["vim-monochrome"] = {
+    loaded = true,
+    path = "/Users/jon/.local/share/nvim/site/pack/packer/start/vim-monochrome",
+    url = "https://github.com/fxn/vim-monochrome"
   }
 }
 
