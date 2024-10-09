@@ -1,0 +1,5 @@
+require("core.plugins.colors")
+require("core.plugins.nvim-tree")
+require("core.plugins.lsp")
+require("core.plugins.format")
+require("core.plugins.lualine")

@@ -6,14 +6,14 @@ local M = {}
 --- @param onFalse function The callback to execute if the user cancels.
 --- @return boolean True if the callback was executed; false otherwise.
 function M.confirm(message, onTrue, onFalse)
-  local choice = vim.fn.input(message);
-  if choice ~= "y" and choice ~= "Y" then
-    onFalse()
-    return false
-  end
+    local choice = vim.fn.input(message);
+    if choice ~= "y" and choice ~= "Y" then
+        onFalse()
+        return false
+    end
 
-  onTrue()
-  return true
+    onTrue()
+    return true
 end
 
 --- Prompt the user for a choice and execute a callback with that choice as a parameter.
@@ -22,14 +22,14 @@ end
 --- @param onFalse function The callback to execute if the user cancels.
 --- @return boolean True if the callback was executed; false otherwise.
 function M.prompt(message, onTrue, onFalse)
-  local choice = vim.fn.input(message)
-  if choice == "" then
-    onFalse()
-    return false
-  end
+    local choice = vim.fn.input(message)
+    if choice == "" then
+        onFalse()
+        return false
+    end
 
-  onTrue(choice)
-  return true
+    onTrue(choice)
+    return true
 end
 
 return M

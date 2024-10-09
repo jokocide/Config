@@ -1,4 +1,4 @@
-export PATH=~/.bin:/.dotnet/tools/:~/.composer/vendor/bin:/Applications/MAMP/Library/bin:~/.npm-global/bin:/usr/local/share/dotnet/x64:~/.go/bin:$PATH
+export PATH=~/.bin:~/.go/bin:$PATH
 export EDITOR=nvim
 alias serve='python3 -m http.server'
 
@@ -22,6 +22,16 @@ esac
 
 alias ll='ls -l'
 alias ports='lsof -iTCP -sTCP:LISTEN -n -P'
+alias s="source ~/.zshrc"
+
+search() {
+    local word="$1"
+    local directory="$2"
+    if [[ "$2" == "" ]]; then
+        directory="."
+    fi
+    grep -rni -- "$word" "$directory"
+}
 
 # Search web via Google
 google() {
@@ -42,6 +52,8 @@ google() {
 
 # Neovim
 alias n="nvim"
+alias plugins="nvim ~/.config/nvim/lua/core/plugins.lua"
+alias keymaps="nvim ~/.config/nvim/lua/core/keymaps.lua"
 
 #.NET
 alias nuget="mono /usr/local/bin/nuget.exe"
@@ -55,6 +67,7 @@ alias ga="git add"
 alias gs="git status"
 alias gm="git commit -m"
 alias gp="git push"
+alias gd="git diff"
 
 # Node/NPM
 alias nr="npm run"
@@ -65,6 +78,12 @@ alias rd="react-devtools"
 # Go
 export GOPATH=~/.go
 alias gr="go run *.go"
+alias grt="go test ./..."
+
+# Zig
+alias zbr="zig build run"
+alias zbt="zig build test"
+alias zbl="zig build -l"
 
 # Docker
 alias dc='docker container'
