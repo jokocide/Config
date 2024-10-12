@@ -4,15 +4,15 @@ local telescope = require('telescope.builtin')
 local M = {}
 
 -- LSP
-vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format()' -- Format on save.
-vim.keymap.set('n', '<leader>lrn', vim.lsp.buf.rename, {}) -- Rename symbol.
-vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, {}) -- View/activate code actions.
-vim.keymap.set('n', '<leader>lgd', vim.lsp.buf.definition, {}) -- Move cursor to definition of symbol.
-vim.keymap.set('n', '<leader>lgi', vim.lsp.buf.implementation, {}) -- Move to implementation of symbol.
+vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format()'            -- Format on save.
+vim.keymap.set('n', '<leader>lrn', vim.lsp.buf.rename, {})          -- Rename symbol.
+vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, {})     -- View/activate code actions.
+vim.keymap.set('n', '<leader>lgd', vim.lsp.buf.definition, {})      -- Move cursor to definition of symbol.
+vim.keymap.set('n', '<leader>lgi', vim.lsp.buf.implementation, {})  -- Move to implementation of symbol.
 vim.keymap.set('n', '<leader>lgr', require('telescope.builtin').lsp_references, {})
-vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover) -- Show modal window next to cursor with symbol information.
-vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float, {}) -- Show modal window with error context information.
-vim.keymap.set('n', '<leader>ln', vim.diagnostic.goto_next, {}) -- Move to next LSP error.
+vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover)                -- Show modal window next to cursor with symbol information.
+vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float, {})    -- Show modal window with error context information.
+vim.keymap.set('n', '<leader>ln', vim.diagnostic.goto_next, {})     -- Move to next LSP error.
 vim.keymap.set('n', '<leader>l<S-n>', vim.diagnostic.goto_prev, {}) -- Move to previous LSP error.
 
 -- Tree
@@ -66,10 +66,11 @@ local function handleBuffer()
     end
 end
 
-vim.keymap.set('n', '<leader>q', handleBuffer) -- Kill buffer.
+--vim.keymap.set('n', '<leader>q', handleBuffer) -- Kill buffer.
+vim.keymap.set('n', '<leader>d', handleBuffer)                  -- Kill buffer.
 --vim.keymap.set('n', '<leader>b', ':enew<CR>') -- Open a new empty buffer.
 vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR><Esc>') -- Open a new empty buffer.
-vim.keymap.set('n', '<leader>l', ':ls<CR>') -- List buffers.
+vim.keymap.set('n', '<leader>l', ':ls<CR>')                     -- List buffers.
 vim.keymap.set('n', '`', '<C-w>w', {
     noremap = true,
     silent = true
