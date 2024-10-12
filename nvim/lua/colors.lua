@@ -2,9 +2,9 @@ vim.o.termguicolors = true
 
 local M = {}
 
-M.THEME = "alabaster"
 M.LIGHT = ""
-M.DARK = "alabaster"
+M.DARK = "zenbones"
+M.THEME = M.DARK
 
 function M.set_theme()
     vim.cmd("colorscheme " .. M.THEME)
