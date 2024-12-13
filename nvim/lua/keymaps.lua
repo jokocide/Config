@@ -4,16 +4,16 @@ local telescope = require('telescope.builtin')
 local M = {}
 
 -- LSP
-vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format()'            -- Format on save.
-vim.keymap.set('n', '<leader>lrn', vim.lsp.buf.rename, {})          -- Rename symbol.
-vim.keymap.set('n', '<leader>lca', vim.lsp.buf.code_action, {})     -- View/activate code actions.
-vim.keymap.set('n', '<leader>lgd', vim.lsp.buf.definition, {})      -- Move cursor to definition of symbol.
-vim.keymap.set('n', '<leader>lgi', vim.lsp.buf.implementation, {})  -- Move to implementation of symbol.
-vim.keymap.set('n', '<leader>lgr', require('telescope.builtin').lsp_references, {})
-vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover)                -- Show modal window next to cursor with symbol information.
-vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float, {})    -- Show modal window with error context information.
-vim.keymap.set('n', '<leader>ln', vim.diagnostic.goto_next, {})     -- Move to next LSP error.
-vim.keymap.set('n', '<leader>l<S-n>', vim.diagnostic.goto_prev, {}) -- Move to previous LSP error.
+vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format()'           -- Format on save.
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})          -- Rename symbol.
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})     -- View/activate code actions.
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})      -- Move cursor to definition of symbol.
+vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {})  -- Move to implementation of symbol.
+vim.keymap.set('n', '<leader>gr', require('telescope.builtin').lsp_references, {})
+vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover)                -- Show modal window next to cursor with symbol information.
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})    -- Show modal window with error context information.
+vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, {})     -- Move to next LSP error.
+vim.keymap.set('n', '<leader><S-n>', vim.diagnostic.goto_prev, {}) -- Move to previous LSP error.
 
 -- Tree
 vim.keymap.set('n', '<S-tab>', ':Explore<CR>')
@@ -35,6 +35,16 @@ vim.keymap.set('n', '<leader>fae', telescope.diagnostics, {})
 vim.keymap.set('n', '<S-h>', ':bprev<CR>')
 vim.keymap.set('n', '<S-l>', ':bnext<CR>')
 -- Remap Tab to behave like Enter in Netrw
+
+-- Color
+vim.keymap.set('n', '<leader>cb', function()
+    if vim.o.background == 'dark' then
+        vim.o.background = 'light'
+    else
+        vim.o.background = 'dark'
+    end
+end)
+
 
 -- Map <Tab> to <CR> in netrw windows only.
 vim.cmd 'au FileType netrw nmap <buffer> <Tab> <CR>'

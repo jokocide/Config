@@ -30,7 +30,7 @@ if &background ==# 'dark'
     let g:terminal_color_13 = '#CF86C1'
     let g:terminal_color_14 = '#65B8C1'
     let g:terminal_color_15 = '#888F94'
-    highlight Normal guifg=#B4BDC3 guibg=#121212 guisp=NONE gui=NONE cterm=NONE
+    highlight Normal guifg=#B4BDC3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link ModeMsg Normal
     highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight Boolean guifg=#B4BDC3 guibg=NONE guisp=NONE gui=italic cterm=italic
@@ -251,7 +251,7 @@ else
     let g:terminal_color_13 = '#7B3B70'
     let g:terminal_color_14 = '#2B747C'
     let g:terminal_color_15 = '#4F5E68'
-    highlight Normal guifg=#2C363C guibg=#F0EDEC guisp=NONE gui=NONE cterm=NONE
+    highlight Normal guifg=#2C363C guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link ModeMsg Normal
     highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight Boolean guifg=#2C363C guibg=NONE guisp=NONE gui=italic cterm=italic
